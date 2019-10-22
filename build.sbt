@@ -11,10 +11,12 @@ lazy val root = (project in file("."))
   .settings(
     name := "digstats",
     libraryDependencies ++= Seq(
-        "io.digdag"       % "digdag-cli"        % "0.9.39" % Compile,
-        "org.scalikejdbc" %% "scalikejdbc"      % "3.3.5",
-        "org.scalatest"   %% "scalatest"        % "3.0.8" % Test,
-        "org.scalikejdbc" %% "scalikejdbc-test" % "3.3.5" % Test
+        "io.digdag"       % "digdag-cli"          % "0.9.39" % Compile,
+        "org.postgresql"  % "postgresql"          % "42.2.8",
+        "org.scalikejdbc" %% "scalikejdbc"        % "3.3.5",
+        "org.scalatest"   %% "scalatest"          % "3.0.8" % Test,
+        "org.scalikejdbc" %% "scalikejdbc-test"   % "3.3.5" % Test,
+        "org.scalikejdbc" %% "scalikejdbc-config" % "3.3.5" % Test
       )
     // TODO: Add a task that migrate database by Digdag and generate sources of scalikejdbc.
   )
