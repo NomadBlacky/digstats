@@ -7,10 +7,14 @@ ThisBuild / resolvers ++= Seq(
 )
 
 lazy val root = (project in file("."))
+  .enablePlugins(ScalikejdbcPlugin)
   .settings(
     name := "digstats",
     libraryDependencies ++= Seq(
-        "io.digdag"     % "digdag-cli" % "0.9.39" % Compile,
-        "org.scalatest" %% "scalatest" % "3.0.8"  % Test
+        "io.digdag"       % "digdag-cli"        % "0.9.39" % Compile,
+        "org.scalikejdbc" %% "scalikejdbc"      % "3.3.5",
+        "org.scalatest"   %% "scalatest"        % "3.0.8" % Test,
+        "org.scalikejdbc" %% "scalikejdbc-test" % "3.3.5" % Test
       )
+    // TODO: Add a task that migrate database by Digdag and generate sources of scalikejdbc.
   )
